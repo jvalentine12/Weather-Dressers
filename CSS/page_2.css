@@ -1,0 +1,18 @@
+#next{
+    position:relative;
+    left:1200px;
+}
+#back{
+    position:relative;
+    left:10px;
+}
+h1 {
+    color: #f8a055;
+}
+
+body{
+    background-color: #4987d8;
+}
+h2{
+    color: #fa6e59;
+}
