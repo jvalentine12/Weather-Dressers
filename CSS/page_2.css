@@ -1,10 +1,8 @@
 #next{
-    position:relative;
-    left:1200px;
+    float: right;
 }
 #back{
-    position:relative;
-    left:10px;
+    float: left;
 }
 h1 {
     color: #f8a055;

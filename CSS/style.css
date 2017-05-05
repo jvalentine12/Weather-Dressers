@@ -8,7 +8,6 @@ body{
 h2{
     color: #fa6e59;
 }
-#next{
-    position: relative;
-    left: 650px;
+#next {
+    float: right;
 }
