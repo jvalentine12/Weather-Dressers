@@ -21,7 +21,9 @@ $(document).ready(function(){
                     var part6="limit=12";
                     var URL_c= part3 + part4 + searches + part5 + part6; 
                    
-                    $.getJSON(URL_c)
+                    $.getJSON(URL_c,function(response){
+                        
+                    }
                 alert("COLD")    
                     
                 }
