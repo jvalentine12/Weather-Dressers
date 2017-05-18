@@ -14,14 +14,13 @@ body{
 h2{
     color: #fa6e59;
 }
-img{
-     height: 90px;
-     border: 1px groove blue;
- }
  
  div{
      font-family: "Trebuchet MS", Helvetica, sans-serif;
      font-size: 50px;
      color: #5bc0de;
      
+ }
+ #clothing{
+     font-size: 20px;
  }
