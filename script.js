@@ -14,26 +14,26 @@ $(document).ready(function(){
             var windspeed = response.current.wind_mph;
             var humidity = response.current.humidity;
             $("#weather-results").append("<br>" + searchval + ":" + "<br>" + "Temp F: "+ temperatureF + " ,Temp C: " + temperatureC + "<br>" + "Windspeed: " + windspeed + "<br>" + "Humidity: " + humidity + "<br>");
-        
+   
             if (temperatureF<50){
                     var part3= "https://api.shopstyle.com/api/v2/products?";
                     var part4= "pid=uid8969-39322563-72&";
                     var searches= "fts=winter+boots+winter+coat+winter+pants&";
                     var part5= "offset=0&";
-                    var part6="limit=5";
+                    var part6="limit=9";
                     var URL_c= part3 + part4 + searches + part5 + part6; 
                     
                     $.getJSON(URL_c,function(response){
-                        console.log(response);
-                            //for (i = 0, i<response.length,i++)
-                            var P_name = response.products[0].name;
-                            var P_img = response.products[0].image.sizes.Medium.url;
-                            var P_price= response.products[0].priceLabel;
-                            var P_size= response.products[0].sizes.Medium;
-                   
-                    $("#clothing").append("<br>" + "<img src=" + P_img + "></img>");  
-                    $("#clothing").append("<br>" + P_name + "<br>" + P_size + "<br>" + P_price);
                         
+                            for (var i = 0; i<response.products.length;i++){
+                                var P_name = response.products[i].name;
+                                var P_img = response.products[i].image.sizes.Medium.url;
+                                var P_price= response.products[i].priceLabel;
+                                
+                                $("#clothing").append("<br>" + "<img src=" + P_img + "></img>");  
+                                $("#clothing").append("<br>" + "Name: " + P_name  + "<br>" + "Price: " + P_price);
+                            }
+                    
                     });
             }
                  else {
@@ -41,19 +41,18 @@ $(document).ready(function(){
                     var part4= "pid=uid8969-39322563-72&";
                     var searches= "fts=summer+shorts+summer+shirts&";
                     var part5= "offset=0&";
-                    var part6="limit=5";
+                    var part6="limit=9";
                     var URL_c= part3 + part4 + searches + part5 + part6; 
                     
                     $.getJSON(URL_c,function(response){
-                            //for (i = 0, i)
-                            var P_name = response.products[0].name;
-                            var P_img = response.products[0].image.sizes.Medium.url;
-                            var P_price= response.products[0].priceLabel;
-                            var P_size= response.products[0].sizes.Medium;
-                   
-                    $("#clothing").append("<br>" + "<img src=" + P_img + "></img>");  
-                    $("#clothing").append("<br>" + P_name + "<br>" + P_size + "<br>" + P_price);
-                 
+                            for (i = 0; i<response.products.length;i++){
+                                var P_name = response.products[i].name;
+                                var P_img = response.products[i].image.sizes.Medium.url;
+                                var P_price= response.products[i].priceLabel;
+                       
+                                $("#clothing").append("<br>" + "<img src=" + P_img + "></img>");  
+                                $("#clothing").append("<br>" + "Name: " + P_name + "<br>" + "Price: " + P_price);
+                            }
                    
                     });
 
@@ -61,19 +60,12 @@ $(document).ready(function(){
     });
         
 });
-
+});
             
             
             
             
             
-// $("#search-button2").click(function(){
-//         alert("working");
-//         alert(temp);
-        
-                  
-         
-                
           
 
  
